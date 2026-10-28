@@ -750,3 +750,77 @@ a:hover{text-decoration:underline}
   background:var(--purple);
   color:#fff;
 }
+
+/* ═══════════ TTS Butonu ═══════════ */
+.msg.bot { padding-right: 40px; position: relative; }
+.tts-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  color: var(--gold);
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+  opacity: 0.6;
+  transition: opacity .15s, background .15s;
+  cursor: pointer;
+  font-family: inherit;
+  z-index: 2;
+}
+.tts-btn:hover, .tts-btn:active {
+  opacity: 1;
+  background: var(--gold);
+  color: #1a1400;
+}
+.tts-btn.speaking {
+  background: var(--danger);
+  color: #fff;
+  opacity: 1;
+  animation: tts-pulse 1s infinite;
+}
+@keyframes tts-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+@media(max-width:400px){
+  .tts-btn { width: 24px; height: 24px; font-size: 11px; top: 5px; right: 5px; }
+  .msg.bot { padding-right: 34px; }
+}
+
+/* ═══════════ Mikrofon Butonu ═══════════ */
+.mic-btn {
+  width: 44px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--gold);
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+  padding: 0;
+}
+.mic-btn:hover, .mic-btn:active {
+  background: var(--panel2);
+}
+.mic-btn.listening {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+  animation: mic-pulse 1s infinite;
+}
+@keyframes mic-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 #f87171aa; }
+  50% { box-shadow: 0 0 0 10px #f8717100; }
+}
+@media(max-width:400px){
+  .mic-btn { width: 40px; height: 44px; font-size: 16px; }
+  .composer { grid-template-columns: minmax(0,1fr) 40px 44px !important; }
+}
