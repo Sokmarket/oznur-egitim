@@ -824,3 +824,37 @@ a:hover{text-decoration:underline}
   .mic-btn { width: 40px; height: 44px; font-size: 16px; }
   .composer { grid-template-columns: minmax(0,1fr) 40px 44px !important; }
 }
+
+/* ═══════════ AMOLED SİYAH TEMA ═══════════ */
+html[data-theme="amoled"]{
+  --bg:#000000;
+  --panel:#0a0a0f;
+  --panel2:#12121a;
+  --border:#a78bfa44;
+  --gold:#f6d17b;
+  --gold2:#bb8736;
+  --purple:#a78bfa;
+  --purple2:#7c3aed;
+  --ink:#f0eee7;
+  --muted:#8a94a6;
+  --user:#1a1230;
+  --bot:#0a0a0f;
+  --success:#6ee7a5;
+  --danger:#f87171;
+  --warning:#fb923c;
+  --shadow:0 4px 20px #000c;
+}
+html[data-theme="amoled"] body{background:#000}
+html[data-theme="amoled"] #topbar{background:linear-gradient(135deg,#0a0a0f,#000 60%,#0a0a0f)}
+html[data-theme="amoled"] .msg.bot{background:#0a0a0f;border-color:#a78bfa33}
+html[data-theme="amoled"] .msg.user{background:#1a1230;border-color:#a78bfa55}
+html[data-theme="amoled"] .msg.bot pre,
+html[data-theme="amoled"] .msg.bot code{background:#000;border-color:#a78bfa33}
+
+/* ═══════════ KATEGORİ İKONLARI ═══════════ */
+.cat-icon{
+  display:inline-block;
+  margin-right:6px;
+  font-size:1.15em;
+  filter:drop-shadow(0 0 4px var(--gold));
+}
